@@ -1,0 +1,57 @@
+﻿@model PageModel
+@{
+    string disabledLeft = Model.PageNumber > 1 ? string.Empty : "disabled";
+    string disabledRight = Model.PageNumber < Model.TotalPages ? string.Empty : "disabled";
+}
+
+<div class="pager d-flex flex-row">
+    <div>
+        @if (Model.TotalPages > Model.PagerSize)
+        {
+            <button class="btn-first" @disabledLeft>First</button>
+        }
+
+        <button class="btn-prev" @disabledLeft><div class="align-self-center"><i class="bi bi-caret-left-fill"></i></div></button>
+
+        @if (Model.TotalPages <= Model.PagerSize)
+        {
+            for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                string className = i == Model.PageNumber ? "btn-number active" : "btn-number";
+                <button class="@className" data-id="@i">@i</button>
+            }
+        }
+        else
+        {
+            bool leftDotsCreated = false;
+            int pageNumber = 1;
+            for (int i = 1; i <= Model.PagerSize; i++)
+            {
+                if (Model.PageNumber > Model.PageIndex && !leftDotsCreated)
+                {
+                    <button disabled>. . .</button>
+                    leftDotsCreated = true;
+                    pageNumber = Model.PageNumber - Model.PageIndex + 2;
+                    continue;
+                }
+
+                if (i == Model.PagerSize && pageNumber < Model.TotalPages)
+                {
+                    <button disabled>. . .</button>
+                    break;
+                }
+
+                string className = pageNumber == Model.PageNumber ? "btn-number active" : "btn-number";
+                <button class="@className" data-id="@i">@pageNumber</button>
+                pageNumber++;
+            }
+        }
+
+        <button class="btn-next" @disabledRight><div class="align-self-center"><i class="bi bi-caret-right-fill"></i></div></button>
+
+        @if (Model.TotalPages > Model.PagerSize)
+        {
+            <button class="btn-last" @disabledRight>Last</button>
+        }
+    </div>
+</div>

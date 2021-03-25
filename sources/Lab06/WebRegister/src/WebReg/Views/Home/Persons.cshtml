@@ -1,0 +1,30 @@
+﻿@model IReadOnlyList<Person>
+@{
+    ViewData["Title"] = "Persons";
+}
+
+<h1 class="display-4">Persons</h1>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(x => item.FirstName)</td>
+                    <td>@Html.DisplayFor(x => item.LastName)</td>
+                    <td>@Html.DisplayFor(x => item.BirthDate)</td>
+                    <td>@Html.DisplayFor(x => item.Email)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

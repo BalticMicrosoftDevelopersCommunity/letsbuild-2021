@@ -1,0 +1,47 @@
+﻿@model AddPersonViewModel 
+@{
+    ViewData["Title"] = "Add Person";
+}
+
+<div class="d-flex flex-column">
+    <div class="d-flex justify-content-center">
+        <h1 class="display-4 mb-5">Add Person</h1>
+    </div>
+
+    @using (Html.BeginForm("AddPersonForm", "Home", FormMethod.Post, new { @class = "needs-validation", novalidate = "true" }))
+    {
+        <div class="d-flex justify-content-center">
+            <div class="add-person d-flex flex-column">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FirstName)
+                    @Html.TextBoxFor(x => x.FirstName,
+                    ViewData.ModelState[nameof(AddPersonViewModel.FirstName)]?.ValidationState == ModelValidationState.Invalid ?
+                    new { @class = "form-control is-invalid" } : new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.FirstName, ViewData.ModelState[nameof(AddPersonViewModel.FirstName)]?.Errors.FirstOrDefault()?.ErrorMessage)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.LastName)
+                    @Html.TextBoxFor(x => x.LastName,
+                    ViewData.ModelState[nameof(AddPersonViewModel.LastName)]?.ValidationState == ModelValidationState.Invalid ?
+                    new { @class = "form-control is-invalid" } : new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.LastName, ViewData.ModelState[nameof(AddPersonViewModel.LastName)]?.Errors.FirstOrDefault()?.ErrorMessage)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.BirthDate)
+                    <input class="form-control" asp-for="BirthDate" asp-format="{0:yyyy-MM-dd}" />
+                    @Html.ValidationMessageFor(x => x.BirthDate, ViewData.ModelState[nameof(AddPersonViewModel.BirthDate)]?.Errors.FirstOrDefault()?.ErrorMessage)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Email)
+                    @Html.TextBoxFor(x => x.Email,
+                    ViewData.ModelState[nameof(AddPersonViewModel.Email)]?.ValidationState == ModelValidationState.Invalid ?
+                    new { @class = "form-control is-invalid" } : new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Email, ViewData.ModelState[nameof(AddPersonViewModel.Email)]?.Errors.FirstOrDefault()?.ErrorMessage)
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary btn-block">Add New Person</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
