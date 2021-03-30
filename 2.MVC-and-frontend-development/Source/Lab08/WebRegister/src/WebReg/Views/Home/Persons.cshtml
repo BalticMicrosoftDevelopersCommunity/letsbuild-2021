@@ -1,0 +1,25 @@
+﻿@model List<PersonViewModel>
+@{
+    ViewData["Title"] = "Persons";
+}
+
+<h1 class="display-4 mb-5">Persons</h1>
+
+<div class="text-left">
+    <table class="table table-responsive table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                @Html.DisplayFor(x => item)
+            }
+        </tbody>
+    </table>
+</div>
