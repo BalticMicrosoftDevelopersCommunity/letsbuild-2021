@@ -1,0 +1,77 @@
+﻿@model PageModel
+@{
+    string disabledLeft = Model.PageNumber > 1 ? "page-item" : "page-item disabled";
+    string disabledRight = Model.PageNumber < Model.TotalPages ? "page-item" : "page-item disabled";
+}
+
+<div class="pager d-flex flex-row">
+    <div>
+        <ul class="pagination">
+
+            @if (Model.TotalPages > Model.PagerSize)
+            {
+                <li class="@disabledLeft">
+                    <a class="btn-first page-link" href="#">&laquo;</a>
+                </li>
+            }
+
+            <li class="@disabledLeft">
+                <a class="btn-prev page-link" href="#">&lt;</a>
+            </li>
+
+            @if (Model.TotalPages <= Model.PagerSize)
+            {
+                for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    string className = i == Model.PageNumber ? "page-item active" : "page-item";
+                    <li class="@className">
+                        <a class="page-link" data-id="@i" href="#">@i</a>
+                    </li>
+                }
+            }
+            else
+            {
+                bool leftDotsCreated = false;
+                int pageNumber = 1;
+                for (int i = 1; i <= Model.PagerSize; i++)
+                {
+                    if (Model.PageNumber > Model.PageIndex && !leftDotsCreated)
+                    {
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">. . .</a>
+                        </li>
+
+                        leftDotsCreated = true;
+                        pageNumber = Model.PageNumber - Model.PageIndex + 2;
+                        continue;
+                    }
+
+                    if (i == Model.PagerSize && pageNumber < Model.TotalPages)
+                    {
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">. . .</a>
+                        </li>
+                        break;
+                    }
+
+                    string className = pageNumber == Model.PageNumber ? "page-item active" : "page-item";
+                    <li class="@className">
+                        <a class="page-link" data-id="@i" href="#">@pageNumber</a>
+                    </li>
+                    pageNumber++;
+                }
+            }
+
+            <li class="@disabledRight">
+                <a class="btn-next page-link" href="#">&gt;</a>
+            </li>
+
+            @if (Model.TotalPages > Model.PagerSize)
+            {
+                <li class="@disabledRight">
+                    <a class="btn-last page-link" href="#">&raquo;</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
