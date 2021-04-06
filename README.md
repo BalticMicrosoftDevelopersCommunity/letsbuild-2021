@@ -13,10 +13,29 @@ The *Let's build 2021* event contains eight sessions:
 7. Cognitive services/Other integration services​
 8. Closing event & final demos​
 
-The goal of the Sessions 2, 3, and 4 is to build an ASP.NET MVC Core application, demonstrating basic approaches and practices. The MVC application will be created incrementaly - step by step, where each step is illustrated by a separate Lab. We will start with an empty MVC application doing almost nothing. Then, we'll be adding new functions, increasing complexity and improving design. Participants will be able to take any lab and reproduce demonstrated functionality.
+## ASP.NET development
+Sessions 2, 3, and 4 are dedicated to basic principles of ASP.NET development.
 
-This MVC application is a simple web-based frontend of a database, containing persons records. We will show how to add persons to the database, search, and display them. Then, we will show how to improve appearance of the application, using CSS, Bootstrap, and Bootstrap themes. And, finally, the application will be deployed to Azure Cloud.
+The goal of these sessions is to build an ASP.NET MVC Core application, demonstrating basic approaches and practices:
+* how to create an ASP.NET MVC Core application
+* basic components of the  ASP.NET MVC application
+* how to create and deploy a database
+* how to work with the database using Entity Framework Core
+* how to use JavaScript and jQuery
+* what is a Blazor
+* how to write unit tests
+* what is a Bootstrap and how to use it.
 
-This is a roadmap of these first three sessions:
+The MVC application will be created incrementaly - step by step, where each step is illustrated by a separate Lab. We will start with almost an empty MVC application (*Lab01*). Then, we'll be adding new functions, increasing complexity and improving design. Participants will be able to take any lab from the Git repository, and reproduce demonstrated functionality.
+
+This MVC application is a simple web-based frontend of a database, containing persons records. We will show how to add persons to the database, search resords, and display them. Then, we will show how to improve appearance of the application, using CSS, Bootstrap, and Bootstrap themes. And, finally, the application will be deployed to Azure Cloud.
+
+This is a roadmap of these three sessions:
 
 ![](/assets/Roadmap.png)
+
+### Prerequisites
+In order to work with the labs, participants will need:
+* Visual Studio 2019
+* Microsoft SQL Server 2017 Express
+* Microsoft SQL Server Management Studio
