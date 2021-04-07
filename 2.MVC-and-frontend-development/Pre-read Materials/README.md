@@ -20,6 +20,8 @@ We recommend to familiarize yourself with the following topics, which will give 
 
 [ASP.NET Core Blazor data binding](https://docs.microsoft.com/en-us/aspnet/core/blazor/components/data-binding?view=aspnetcore-5.0)
 
+[Bootstrap](https://getbootstrap.com/)
+
 [Bootswatch](https://bootswatch.com/)
 
 [Bootswatch Superhero Theme](https://bootswatch.com/superhero/)
