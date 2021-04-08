@@ -1,10 +1,10 @@
 # EntityFramework Core & Database
 
- The goal of the sessions is to demonstrate:
+ The goal of the session is to demonstrate:
 
 * how to create and deploy a database
 * how to create and use test data
-* how to work with the database using EntityFramework Core.
+* how to work with the database using Entity Framework Core.
 
 This Git repository folder contains:
 

@@ -1,6 +1,6 @@
 # Testing & Dependency injection
 
-The goal of the sessions is to demonstrate:
+The goal of the session is to demonstrate:
 
 * what is the ASP.NET MVC dependency injection and how to use it
 * how to write unit tests

@@ -6,7 +6,7 @@ The *Let's build 2021* event contains eight sessions:
 
 1. Introduction. Business use case, architecture & tooling, Git​
 2. MVC and frontend development ​
-3. EntityFramework Core & Database​
+3. Entity Framework Core & Database​
 4. Testing & Dependency injection​
 5. Deployment and hosting on Azure​
 6. Azure Functions​
