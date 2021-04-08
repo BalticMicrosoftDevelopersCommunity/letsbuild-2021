@@ -1,6 +1,6 @@
 # Topic Highlight
 
- The goal of the sessions is to build an ASP.NET MVC Core application, demonstrating basic approaches and practices:
+ The goal of the session is to build an ASP.NET MVC Core application, demonstrating basic approaches and practices:
 
 * what is ASP.NET MVC Core
 * how to create an ASP.NET MVC Core application
