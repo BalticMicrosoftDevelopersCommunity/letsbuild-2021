@@ -1,0 +1,17 @@
+﻿@model List<ParticipantViewModel>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    @foreach (ParticipantViewModel item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Age</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,21 @@
+﻿@model ParticipantViewModel
+
+<form asp-action="Index" asp-controller="Event">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        @Html.EditorFor(x => x.Name)
+        @Html.ValidationMessageFor(x=>x.Name)
+    </div>
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        @Html.EditorFor(x => x.Email)
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+    <div class="mb-3">
+        <label for="Age" class="form-label">Age</label>
+        @Html.EditorFor(x => x.Age)
+        @Html.ValidationMessageFor(x => x.Age)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add participant</button>
+</form>
